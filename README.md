@@ -41,6 +41,9 @@ curl -u "YOUR_USERNAME:YOUR_ACCESS_KEY" \
 -X POST "https://api-cloud.browserstack.com/app-automate/upload" \
 -F "file=@/path/to/apk/file"
 ```
+Example:
+curl -u "USER:KEY" -X POST "https://api-cloud.browserstack.com/app-automate/upload" -F "file=@/users/myuser/downloads/WikipediaSample.apk"
+
 
 Ensure that @ symbol is prepended to the file path in the above request. Please note the `app_url` value returned in the API response. We will use this to set the application under test while configuring the test later on.
 
@@ -55,19 +58,29 @@ Open `single.json` file in `android/run-single-test` folder for Android and `ios
 
 - Replace `bs://<app-id>` with the URL obtained from app upload step
 
-- Set the deviceName and platformVersion. You can refer our [Capability Generator](https://www.browserstack.com/app-automate/capabilities)
+- If you would like to change the devices you run the tests against, set the deviceName and platformVersion. You can refer our [Capability Generator](https://www.browserstack.com/app-automate/capabilities)
 
 - Run the below command to execute a single Android test on BrowserStack AppAutomate:
     ```
     cd android
     paver run single
     ```
+    FOR APP PERCY:
+    ```
+    cd android
+    percy app:exec -- paver run single
+     
+     
 
 - Run the below command to execute a single iOS test on BrowserStack AppAutomate:
     ```
     cd ios
     paver run single
     ```
+    FOR APP PERCY:
+    ```
+    cd ios
+    percy app:exec -- paver run single
 
 **3. Configure and run your parallel test**
 
@@ -84,12 +97,20 @@ Open `single.json` file in `android/run-single-test` folder for Android and `ios
 cd android
 paver run parallel
 ```
+FOR APP PERCY:
+```
+cd android
+percy app:exec -- paver run parallel
 
 - Run the below command to execute a parallel iOS test on BrowserStack AppAutomate:
 ```
 cd ios
 paver run parallel
 ```
+FOR APP PERCY:
+```
+cd ios
+percy app:exec -- paver run parallel
 
 - You can access the test execution results, and debugging information such as video recording, network logs on [App Automate dashboard](https://app-automate.browserstack.com/dashboard)
 
