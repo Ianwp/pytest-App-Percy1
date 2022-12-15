@@ -6,6 +6,8 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import pytest
 from selenium.webdriver.common.by import By
+from appium import webdriver
+from percy import percy_screenshot
 
 @pytest.mark.usefixtures('setWebdriver')
 class TestSample:
@@ -20,6 +22,7 @@ class TestSample:
         )
         text_input.send_keys("hello@browserstack.com"+"\n")
         time.sleep(5)
+        percy_screenshot(self.driver, 'screenshot 1')
         text_output = WebDriverWait(self.driver, 30).until(
             EC.element_to_be_clickable((AppiumBy.ACCESSIBILITY_ID, "Text Output"))
         )
