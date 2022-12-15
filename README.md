@@ -111,6 +111,7 @@ FOR APP PERCY:
 ```
 cd ios
 percy app:exec -- paver run parallel
+```
 
 - You can access the test execution results, and debugging information such as video recording, network logs on [App Automate dashboard](https://app-automate.browserstack.com/dashboard)
 
