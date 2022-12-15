@@ -25,6 +25,17 @@ To install the dependencies, run the following command in project's base directo
     ```sh
     pip install -r requirements.txt
     ```
+- Percy:
+
+    ```
+    npm install --save-dev @percy/cli
+    ```    
+- App Percy:
+
+    ```
+    pip install percy-appium-app
+    ```
+
 
 ## Getting Started
 
