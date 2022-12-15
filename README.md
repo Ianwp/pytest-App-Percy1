@@ -101,9 +101,8 @@ FOR APP PERCY:
 ```
 cd android
 percy app:exec -- paver run parallel
-
+```
 - Run the below command to execute a parallel iOS test on BrowserStack AppAutomate:
-
 ```
 cd ios
 paver run parallel
