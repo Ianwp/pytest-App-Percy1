@@ -5,7 +5,7 @@ PyTest Integration with BrowserStack.
 ![BrowserStack Logo](https://d98b8t1nnulk5.cloudfront.net/production/images/layout/logo-header.png?1469004780)
 ### Requirements
 
-1. Python 3.6+ or Python 2.7+
+1. Python 3
     
     - For Windows, download latest python version from [here](https://www.python.org/downloads/windows/) and run the installer executable
     - For Mac and Linux, run `python --version` to see what python version is pre-installed. If you want a different version download from [here](https://www.python.org/downloads/)
@@ -20,11 +20,6 @@ To install the dependencies, run the following command in project's base directo
     pip3 install -r requirements.txt
     ```
 
-- For Python 2
-
-    ```sh
-    pip install -r requirements.txt
-    ```
 - Percy:
 
     ```
