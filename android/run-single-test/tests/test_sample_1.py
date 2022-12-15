@@ -6,6 +6,8 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import pytest
 from selenium.webdriver.common.by import By
+from appium import webdriver
+from percy import percy_screenshot
 
 @pytest.mark.usefixtures('setWebdriver')
 class TestSample:
@@ -23,6 +25,7 @@ class TestSample:
             )
         search_input.send_keys("BrowserStack")
         time.sleep(5)
+        percy_screenshot(self.driver, 'screenshot 1')
         search_results = self.driver.find_elements(
             AppiumBy.CLASS_NAME, "android.widget.TextView")
             
